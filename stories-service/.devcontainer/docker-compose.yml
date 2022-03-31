@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  story_service:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "4002:4002"
+    volumes:
+      - ..:/workdir
+    command: sleep infinity
