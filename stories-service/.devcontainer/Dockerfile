@@ -1,8 +1,10 @@
 FROM node:16
 
 WORKDIR /workdir
-EXPOSE 3000
+COPY  ../package.json ../yarn.lock ./
+RUN yarn install
 COPY ../ .
 
-RUN yarn
+EXPOSE 4002
+
 CMD ["yarn", "start"]
